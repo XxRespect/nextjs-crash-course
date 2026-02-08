@@ -13,9 +13,9 @@ const NavBar = () => {
                 <p>Dev Event</p>
             </Link>
             <ul>
-                <Link href="/">Home</Link>
-                <Link href="/">Event</Link>
-                <Link href="/">Create Event</Link>
+                <Link href="/" className='hover:transition-shadow hover:scale-110'>Home</Link>
+                <Link href="/" className='hover:transition-shadow hover:scale-110'>Event</Link>
+                <Link href="/" className='hover:transition-shadow hover:scale-110'>Create Event</Link>
             </ul>
         </nav>
     </header>

@@ -30,8 +30,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${SchibstedGrotesk.variable} ${MartianMono.variable} antialiased min-h-screen bg-black text-white`}
-      >
+        className={`${SchibstedGrotesk.variable} ${MartianMono.variable} antialiased min-h-screen  text-white`}
+      style={{background:"#00009"}}>
 
 
         <div style={{ position: 'absolute',
