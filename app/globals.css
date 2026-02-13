@@ -107,6 +107,15 @@
 }
 
 @layer base {
+  /* make root elements fill the viewport so nothing gets cut off */
+  html,
+  body,
+  #__next,
+  main {
+    /* allow the document to grow beyond one viewport so scrolling works normally */
+    @apply min-h-screen w-screen;
+  }
+
   * {
     @apply border-border outline-ring/50;
   }
@@ -116,7 +125,7 @@
   }
 
   main {
-    @apply mx-auto container flex flex-col sm:px-10 px-5 py-10;
+    @apply container flex flex-row sm:px-10 px-5 py-10 relative z-10;
   }
 
   h1 {

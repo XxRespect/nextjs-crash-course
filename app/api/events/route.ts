@@ -24,6 +24,8 @@ export async function POST(req: NextRequest) {
                 { status: 400 }
             );
 
+            let tags = JSON.parse(formData.get('tags') as string)
+            let agendas = JSON.parse(formData.get('agenda') as string)
             const arrayBuffer = await file.arrayBuffer();
             const buffer = Buffer.from(arrayBuffer);
 
@@ -37,7 +39,14 @@ export async function POST(req: NextRequest) {
 
             eventData.image = (uploadResult as {secure_url: string}).secure_url;
 
-        const createdEvent = await Event.create(eventData);
+
+
+        const createdEvent = await Event.create({
+            ...eventData,
+            tags: tags,
+            agenda: agendas
+
+        });
 
 
         return NextResponse.json(
@@ -56,6 +65,7 @@ export async function GET(req: NextRequest) {
     try {
         await connectDB();
 
+        
         const events = await Event.find().sort({createdAt: -1})
 
 

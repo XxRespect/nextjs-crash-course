@@ -14,6 +14,7 @@ interface Props {
 
 const EventCard = ({ title, image, slug, location, date, time }: Props) => {
     return (
+        <>
         <div >
             <Link href={`/events/${slug}`} id="event-card">
                 <Image src={image} alt={title} width={410} height={300} className="rounded-sm" />
@@ -30,10 +31,13 @@ const EventCard = ({ title, image, slug, location, date, time }: Props) => {
                     <div >
                         <Image src="/icons/clock.svg" alt="date" width={14} height={14} />
                         <p>{time}</p>
+
                     </div>
                 </div>
+                <p className="explore-btn">Explore</p>
             </Link>
         </div>
+        </>
     )
 }
 

@@ -29,8 +29,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${SchibstedGrotesk.variable} ${MartianMono.variable} antialiased min-h-screen  text-white`}
-      style={{background:"#00009"}}>
+        className={`${SchibstedGrotesk.variable} ${MartianMono.variable} antialiased   text-white`}
+      >
         <LayoutBackground />
         <main>{children}</main>
       </body>

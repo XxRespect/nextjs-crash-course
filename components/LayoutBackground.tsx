@@ -5,17 +5,20 @@ import NavBar from "@/components/NavBar";
 
 export default function LayoutBackground() {
   return (
-    <div
-      style={{
-        position: 'absolute',
-        inset: '0',
-        top: '0',
-        zIndex: '1'
-      }}
-      className="min-h-screen"
-    >
+    <>
       <NavBar />
-      <LightRays
+      <div
+        /* make the background cover the viewport at all times; fixed keeps it behind scrolling content */
+        /* pointer-events: none prevents this element from capturing clicks */
+        style={{
+          position: 'fixed',
+          inset: '0',
+          zIndex: '0',
+          pointerEvents: 'none'
+        }}
+        className="w-full h-full"
+      >
+        <LightRays
         raysOrigin="top-center-offset"
         raysColor="#5dfeca"
         raysSpeed={0.2}
@@ -30,6 +33,7 @@ export default function LayoutBackground() {
         fadeDistance={1}
         saturation={1}
       />
-    </div>
+      </div>
+    </>
   );
 }
